@@ -4,16 +4,18 @@ import PropTypes from 'prop-types';
 
 import Routes from './Routes';
 import DevTools from './DevTools';
-import Menu from './structure/Menu';
+import LayoutComponent from './structure/LayoutComponent';
 
+import 'antd/dist/antd.css';
 
 const App = ({ children }) => (
-  <div>
-    <Menu />
-    <Routes />
-    {children}
-    <DevTools />
-  </div>
+  <React.Fragment>
+    <LayoutComponent>
+      <Routes />
+      {children}
+      <DevTools />
+    </LayoutComponent>
+  </React.Fragment>
 );
 
 App.propTypes = {
